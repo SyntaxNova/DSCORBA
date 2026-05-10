@@ -1,0 +1,29 @@
+idlj -fall Sample.idl
+
+javac *.java SampleApp/*.java
+
+tnameserv -ORBInitialPort 1050 &
+
+ // start orbd -ORBInitialPort 1050 -ORBInitialHost localhost
+
+java Server -ORBInitialPort 1050 -ORBInitialHost localhost
+
+java Client -ORBInitialPort 1050 -ORBInitialHost localhost
+
+
+
+
+
+// If java is not 8
+
+sudo apt update
+
+sudo apt install openjdk-8-jdk -y
+
+sudo update-alternatives --config java
+
+sudo update-alternatives --config javac
+
+java -version
+
+javac -version
